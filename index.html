@@ -454,6 +454,7 @@
     .metod-diagram {
       max-width: 860px;
       margin: 0 auto 72px;
+      position: relative;
     }
     .metod-diagram-center {
       filter: drop-shadow(0 4px 24px rgba(59,130,246,.18));
@@ -463,6 +464,20 @@
       height: auto;
       display: block;
     }
+    .metod-overlay-label {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: #5b8fc9;
+      white-space: nowrap;
+      pointer-events: none;
+    }
+    .metod-overlay-label.top    { top: 10%; }
+    .metod-overlay-label.bottom { bottom: 10%; }
     .metod-cards {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -1024,9 +1039,11 @@
     </div>
 
     <div class="metod-diagram">
+      <div class="metod-overlay-label top">Captação</div>
       <div class="metod-diagram-center">
         <img src="images/metod-logo.png" alt="Metodologia Zuno">
       </div>
+      <div class="metod-overlay-label bottom">Agendamento</div>
     </div>
 
     <div class="metod-cards">
