@@ -372,7 +372,7 @@
     .cases-head { text-align: center; margin-bottom: 56px; }
     .cases-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 16px;
     }
     .case-card {
@@ -389,16 +389,15 @@
       box-shadow: 0 12px 40px rgba(0,0,0,.5);
     }
     .case-thumb {
-      aspect-ratio: 16/9;
+      aspect-ratio: 9/16;
       position: relative;
       overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
-    .case-thumb-bg {
-      position: absolute;
-      inset: 0;
+    .case-thumb iframe {
+      width: 100%;
+      height: 100%;
+      display: block;
+      border: none;
     }
     .case-play {
       position: relative;
@@ -443,55 +442,81 @@
       padding: 80px 0;
       background: var(--bg-deeper);
     }
-    .metod-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: start;
+    .metod-head {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 64px;
     }
-    .metod-left .s-title { max-width: 520px; }
-    .metod-steps { display: flex; flex-direction: column; gap: 0; }
-    .metod-step {
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-      padding: 20px 0;
-      border-bottom: 1px solid var(--border);
+    .metod-diagram {
+      position: relative;
+      width: 460px;
+      height: 460px;
+      margin: 0 auto 72px;
     }
-    .metod-step:first-child { padding-top: 0; }
-    .metod-icon {
-      flex-shrink: 0;
-      width: 34px; height: 34px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--blue-dark), var(--blue));
+    .metod-diagram-svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .metod-diagram-center {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 220px; height: 220px;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #fff;
-      margin-top: 2px;
+      filter: drop-shadow(0 0 24px rgba(59,130,246,.6)) drop-shadow(0 0 60px rgba(59,130,246,.25));
     }
-    .metod-content {}
-    .metod-label {
-      font-size: 11px;
+    .metod-diagram-center img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .metod-diagram-label {
+      position: absolute;
+      font-size: 10px;
       font-weight: 700;
-      letter-spacing: 2.5px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--white-soft);
+      white-space: nowrap;
+    }
+    .metod-diagram-label.top    { top: 10px;    left: 50%; transform: translateX(-50%); }
+    .metod-diagram-label.right  { top: 50%;     right: 10px; transform: translateY(-50%); }
+    .metod-diagram-label.bottom { bottom: 10px; left: 50%; transform: translateX(-50%); }
+    .metod-diagram-label.left   { top: 50%;     left: 10px; transform: translateY(-50%); }
+    .metod-cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    .metod-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
+      border-radius: var(--r);
+      padding: 24px;
+    }
+    .metod-card-step {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
       text-transform: uppercase;
       color: var(--blue);
-      margin-bottom: 4px;
+      margin-bottom: 8px;
     }
-    .metod-name {
-      font-size: 16px;
+    .metod-card-name {
+      font-size: 18px;
       font-weight: 600;
       color: var(--white-soft);
-      margin-bottom: 6px;
-      letter-spacing: -.2px;
+      margin-bottom: 10px;
+      letter-spacing: -.3px;
     }
-    .metod-desc {
-      font-size: 15px;
-      font-weight: 400;
+    .metod-card-desc {
+      font-size: 14px;
       line-height: 1.65;
       color: var(--gray-mid);
-      letter-spacing: -.2px;
     }
 
     /* ─── 6. Como Funciona ──────────────────────────────────────── */
@@ -780,7 +805,9 @@
       .hero-inner { flex-direction: column; gap: 48px; }
       .hero-content { flex: none; width: 100%; }
       .hero-form-col { width: 100%; max-width: 540px; }
-      .metod-inner { grid-template-columns: 1fr; gap: 48px; }
+      .metod-diagram { width: 320px; height: 320px; }
+      .metod-diagram-center { width: 140px; height: 140px; }
+      .metod-cards { grid-template-columns: 1fr; }
       .services-grid { grid-template-columns: repeat(2, 1fr); }
       .about-inner { grid-template-columns: 1fr; gap: 40px; }
       .about-img-wrap { max-width: 540px; }
@@ -846,7 +873,7 @@
     </ul>
 
     <div class="nav-cta-wrap">
-      <a href="https://wa.me/5545999999999?text=Ol%C3%A1%2C+Zuno%21+Quero+saber+mais." target="_blank" class="btn btn--nav">
+      <a href="https://wa.me/5545998304723?text=Ol%C3%A1%2C+Zuno%21+Quero+saber+mais." target="_blank" class="btn btn--nav">
         Fale conosco
       </a>
     </div>
@@ -910,10 +937,16 @@
 
         <form id="hero-form" novalidate>
           <div class="form-row">
-            <input class="field" type="text" id="h-nome" name="nome" placeholder="Seu nome completo" required />
+            <input class="field" type="text" id="h-nome" name="nome" placeholder="Seu nome" required />
           </div>
           <div class="form-row">
-            <input class="field" type="tel" id="h-wp" name="whatsapp" placeholder="Seu WhatsApp" required />
+            <input class="field" type="email" id="h-email" name="email" placeholder="Seu melhor e-mail" required />
+          </div>
+          <div class="form-row">
+            <input class="field" type="tel" id="h-wp" name="whatsapp" placeholder="WhatsApp com DDD" required />
+          </div>
+          <div class="form-row">
+            <input class="field" type="text" id="h-ig" name="instagram" placeholder="Instagram da empresa (ex: @zuno.assessoria)" />
           </div>
           <div class="form-row">
             <select class="field" id="h-fat" name="faturamento">
@@ -959,72 +992,44 @@
 
       <div class="case-card">
         <div class="case-thumb">
-          <div class="case-thumb-bg" style="background:linear-gradient(135deg,#0d1e3a 0%,#1a3a6e 60%,#0f2d5c 100%);"></div>
-          <div class="case-play"><svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+          <iframe src="https://www.youtube.com/embed/UvfSdyyR8Ho" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="case-body">
-          <div class="case-tag">CASE DE SUCESSO</div>
-          <div class="case-title">Café com Paixão — 4.2× ROAS em 45 dias</div>
+          <div class="case-tag">DEPOIMENTO</div>
+          <div class="case-title">CG Lima</div>
           <div class="case-brand">ZUNO</div>
         </div>
       </div>
 
       <div class="case-card">
         <div class="case-thumb">
-          <div class="case-thumb-bg" style="background:linear-gradient(135deg,#0d2137 0%,#1a3a5c 50%,#0f4c75 100%);"></div>
-          <div class="case-play"><svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+          <iframe src="https://www.youtube.com/embed/hWqCJFOL_U8" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="case-body">
-          <div class="case-tag">CASE DE SUCESSO</div>
-          <div class="case-title">Dr. Gleisson — 37 novos agendamentos por mês</div>
+          <div class="case-tag">DEPOIMENTO</div>
+          <div class="case-title">Javé Estofados</div>
           <div class="case-brand">ZUNO</div>
         </div>
       </div>
 
       <div class="case-card">
         <div class="case-thumb">
-          <div class="case-thumb-bg" style="background:linear-gradient(135deg,#0a1628 0%,#0d2b3e 50%,#163a5c 100%);"></div>
-          <div class="case-play"><svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+          <iframe src="https://www.youtube.com/embed/41rbruS7-XA" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="case-body">
-          <div class="case-tag">CASE DE SUCESSO</div>
-          <div class="case-title">Clínica Odontológica — Custo por lead: R$8,40</div>
+          <div class="case-tag">DEPOIMENTO</div>
+          <div class="case-title">Empório da Construção</div>
           <div class="case-brand">ZUNO</div>
         </div>
       </div>
 
       <div class="case-card">
         <div class="case-thumb">
-          <div class="case-thumb-bg" style="background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);"></div>
-          <div class="case-play"><svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+          <iframe src="https://www.youtube.com/embed/3QCIvcFL8Lk" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="case-body">
-          <div class="case-tag">CASE DE SUCESSO</div>
-          <div class="case-title">Loja de Roupas — 3× de aumento em vendas online</div>
-          <div class="case-brand">ZUNO</div>
-        </div>
-      </div>
-
-      <div class="case-card">
-        <div class="case-thumb">
-          <div class="case-thumb-bg" style="background:linear-gradient(135deg,#0d1b2a 0%,#1b2a4a 50%,#263d6b 100%);"></div>
-          <div class="case-play"><svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
-        </div>
-        <div class="case-body">
-          <div class="case-tag">CASE DE SUCESSO</div>
-          <div class="case-title">Escritório de Advocacia — 180% mais cliques em 60 dias</div>
-          <div class="case-brand">ZUNO</div>
-        </div>
-      </div>
-
-      <div class="case-card">
-        <div class="case-thumb">
-          <div class="case-thumb-bg" style="background:linear-gradient(135deg,#1a0d2e 0%,#2d1b69 40%,#1a3a8f 100%);"></div>
-          <div class="case-play"><svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
-        </div>
-        <div class="case-body">
-          <div class="case-tag">CASE DE SUCESSO</div>
-          <div class="case-title">Pet Shop Local — R$2.100 em vendas diretas no 1º mês</div>
+          <div class="case-tag">DEPOIMENTO</div>
+          <div class="case-title">Tiago — Redes e Proteção</div>
           <div class="case-brand">ZUNO</div>
         </div>
       </div>
@@ -1036,61 +1041,50 @@
 <!-- ─── 5. Metodologia ─────────────────────────────────────────── -->
 <section class="metod-section" id="metodologia">
   <div class="container">
-    <div class="metod-inner">
 
-      <div class="metod-left">
-        <div class="s-label">NOSSA METODOLOGIA</div>
-        <h2 class="s-title">Conheça a metodologia <span class="hl">validada da Zuno</span></h2>
-        <p class="s-sub">Uma abordagem completa para crescimento consistente: da atração de leads até a maximização do valor de cada cliente.</p>
+    <div class="metod-head">
+      <div class="s-label">NOSSA METODOLOGIA</div>
+      <h2 class="s-title">Conheça a metodologia <span class="hl">validada da Zuno</span></h2>
+      <p class="s-sub">Uma abordagem completa para crescimento consistente: da atração de leads até a maximização do valor de cada cliente.</p>
+    </div>
+
+    <div class="metod-diagram">
+      <div class="metod-diagram-center">
+        <img src="images/metod-logo.png" alt="Metodologia Zuno">
       </div>
 
-      <div class="metod-steps">
+      <div class="metod-diagram-label top">Captação</div>
+      <div class="metod-diagram-label right">Receita</div>
+      <div class="metod-diagram-label bottom">Engajamento</div>
+      <div class="metod-diagram-label left">Monetização</div>
+    </div>
 
-        <div class="metod-step">
-          <div class="metod-icon">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-          </div>
-          <div class="metod-content">
-            <div class="metod-label">Passo 1</div>
-            <div class="metod-name">Captação</div>
-            <p class="metod-desc">Definimos com precisão quem é o público ideal da sua empresa e criamos estratégias para atrair pessoas realmente interessadas no que você vende. A partir disso, geramos demanda qualificada de forma consistente.</p>
-          </div>
-        </div>
+    <div class="metod-cards">
 
-        <div class="metod-step">
-          <div class="metod-icon">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-          </div>
-          <div class="metod-content">
-            <div class="metod-label">Passo 2</div>
-            <div class="metod-name">Receita</div>
-            <p class="metod-desc">Depois que os leads chegam, nosso foco é transformar interesse em vendas. Estruturamos e acompanhamos o processo comercial para aumentar a conversão de oportunidades em clientes.</p>
-          </div>
-        </div>
-
-        <div class="metod-step">
-          <div class="metod-icon">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          </div>
-          <div class="metod-content">
-            <div class="metod-label">Passo 3</div>
-            <div class="metod-name">Engajamento</div>
-            <p class="metod-desc">Criamos estratégias de comunicação contínua que fortalecem o relacionamento com seus clientes, aumentam a confiança na sua marca e estimulam novas oportunidades de venda.</p>
-          </div>
-        </div>
-
-        <div class="metod-step" style="border-bottom:none; padding-bottom:0;">
-          <div class="metod-icon">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-          </div>
-          <div class="metod-content">
-            <div class="metod-label">Passo 4</div>
-            <div class="metod-name">Monetização</div>
-            <p class="metod-desc">Trabalhamos para aumentar o valor gerado por cada cliente. Aplicamos estratégias que ampliam a lucratividade e fazem sua empresa vender mais para a mesma base de clientes.</p>
-          </div>
-        </div>
-
+      <div class="metod-card">
+        <div class="metod-card-step">Passo 1</div>
+        <div class="metod-card-name">Captação</div>
+        <p class="metod-card-desc">Definimos com precisão quem é o público ideal da sua empresa e criamos estratégias para atrair pessoas realmente interessadas no que você vende. A partir disso, geramos demanda qualificada de forma consistente.</p>
       </div>
+
+      <div class="metod-card">
+        <div class="metod-card-step">Passo 2</div>
+        <div class="metod-card-name">Receita</div>
+        <p class="metod-card-desc">Depois que os leads chegam, nosso foco é transformar interesse em vendas. Estruturamos e acompanhamos o processo comercial para aumentar a conversão de oportunidades em clientes.</p>
+      </div>
+
+      <div class="metod-card">
+        <div class="metod-card-step">Passo 3</div>
+        <div class="metod-card-name">Engajamento</div>
+        <p class="metod-card-desc">Criamos estratégias de comunicação contínua que fortalecem o relacionamento com seus clientes, aumentam a confiança na sua marca e estimulam novas oportunidades de venda.</p>
+      </div>
+
+      <div class="metod-card">
+        <div class="metod-card-step">Passo 4</div>
+        <div class="metod-card-name">Monetização</div>
+        <p class="metod-card-desc">Trabalhamos para aumentar o valor gerado por cada cliente. Aplicamos estratégias que ampliam a lucratividade e fazem sua empresa vender mais para a mesma base de clientes.</p>
+      </div>
+
     </div>
   </div>
 </section>
@@ -1172,7 +1166,7 @@
           Com uma equipe dedicada e apaixonada por resultados, nosso time trabalha lado a lado com nossos clientes para criar soluções sob medida, que transformam desafios em oportunidades e ajudam negócios a atrair mais clientes, vender mais e alcançar o próximo nível de crescimento.
         </p>
         <div class="about-cta">
-          <a href="https://wa.me/5545999999999?text=Ol%C3%A1%2C+Zuno%21+Quero+agendar+uma+reuni%C3%A3o." target="_blank" class="btn btn--primary">
+          <a href="https://wa.me/5545998304723?text=Ol%C3%A1%2C+Zuno%21+Quero+agendar+uma+reuni%C3%A3o." target="_blank" class="btn btn--primary">
             Quero saber mais informações
           </a>
         </div>
@@ -1256,7 +1250,7 @@
       <div>
         <h2 class="cta-title">Pronto para aumentar o faturamento da <span class="hl">sua empresa?</span></h2>
         <p class="cta-sub">Agende uma reunião gratuita com nosso time e entenda como a Zuno pode ajudar o seu negócio a gerar mais clientes e aumentar as vendas.</p>
-        <a href="https://wa.me/5545999999999?text=Ol%C3%A1%2C+Zuno%21+Quero+agendar+uma+reuni%C3%A3o+gratuita." target="_blank" class="btn btn--primary">
+        <a href="https://wa.me/5545998304723?text=Ol%C3%A1%2C+Zuno%21+Quero+agendar+uma+reuni%C3%A3o+gratuita." target="_blank" class="btn btn--primary">
           Quero mais informações
         </a>
       </div>
@@ -1318,14 +1312,14 @@
         </div>
         <p class="footer-tagline">Impulsionamos empresas com estratégias de marketing digital, tráfego pago e estrutura comercial para gerar crescimento real.</p>
         <div class="footer-socials">
-          <a href="https://instagram.com/zunoadv" target="_blank" class="social-btn" aria-label="Instagram">
+          <a href="https://www.instagram.com/zuno.assessoria" target="_blank" class="social-btn" aria-label="Instagram">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <rect x="2" y="2" width="20" height="20" rx="5"/>
               <circle cx="12" cy="12" r="4.5"/>
               <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
             </svg>
           </a>
-          <a href="https://wa.me/5545999999999" target="_blank" class="social-btn" aria-label="WhatsApp">
+          <a href="https://wa.me/5545998304723" target="_blank" class="social-btn" aria-label="WhatsApp">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
             </svg>
@@ -1347,8 +1341,8 @@
       <div>
         <div class="footer-col-label">Contato</div>
         <ul class="footer-links">
-          <li><a href="https://instagram.com/zunoadv" target="_blank">@zunoadv</a></li>
-          <li><a href="https://wa.me/5545999999999" target="_blank">WhatsApp: (45) 9 9999-9999</a></li>
+          <li><a href="https://www.instagram.com/zuno.assessoria" target="_blank">@zuno.assessoria</a></li>
+          <li><a href="https://wa.me/5545998304723" target="_blank">WhatsApp: (45) 99830-4723</a></li>
           <li style="color:rgba(255,255,255,.25);font-size:13px;pointer-events:none;">Foz do Iguaçu, PR — Brasil</a></li>
         </ul>
       </div>
@@ -1357,7 +1351,7 @@
 
     <div class="footer-bottom">
       <span>Copyright © 2025 — ZUNO ASSESSORIA. Todos os direitos reservados.</span>
-      <span>CNPJ: XX.XXX.XXX/0001-XX</span>
+      <span>CNPJ: 47.512.920/0001-52</span>
     </div>
   </div>
 </footer>
@@ -1404,17 +1398,21 @@
   // 5. Hero form → WhatsApp
   document.getElementById('hero-form').addEventListener('submit', e => {
     e.preventDefault();
-    const nome = document.getElementById('h-nome').value.trim();
-    const wp   = document.getElementById('h-wp').value.trim();
-    const fat  = document.getElementById('h-fat').value;
+    const nome  = document.getElementById('h-nome').value.trim();
+    const email = document.getElementById('h-email').value.trim();
+    const wp    = document.getElementById('h-wp').value.trim();
+    const ig    = document.getElementById('h-ig').value.trim();
+    const fat   = document.getElementById('h-fat').value;
     if (!nome || !wp) { alert('Preencha seu nome e WhatsApp.'); return; }
     const text = [
       `Olá, Zuno! 👋`,
       `Me chamo *${nome}*.`,
-      fat ? `Faturamento mensal: *${fat}*.` : '',
-      `Meu WhatsApp: ${wp}`
+      email ? `E-mail: ${email}` : '',
+      `WhatsApp: ${wp}`,
+      ig    ? `Instagram: ${ig}` : '',
+      fat   ? `Faturamento mensal: *${fat}*` : '',
     ].filter(Boolean).join('\n');
-    window.open(`https://wa.me/5545999999999?text=${encodeURIComponent(text)}`, '_blank');
+    window.open(`https://wa.me/5545998304723?text=${encodeURIComponent(text)}`, '_blank');
   });
 
   // 6. Show hamburger on mobile
