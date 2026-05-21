@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-N2NP75J9');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- Google Ads tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18179646536"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18179646536');
+  </script>
+  <!-- End Google Ads tag -->
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastro Recebido — Zuno Assessoria</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&display=swap" rel="stylesheet" />
+
+  <!-- ═══════════════════════════════════════════════════════════
+       META PIXEL — cole seu Pixel ID nos dois lugares indicados
+  ════════════════════════════════════════════════════════════ -->
+  <!-- Meta Pixel -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window,document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1042829274972057');
+  fbq('track', 'PageView');
+  fbq('track', 'Lead');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1042829274972057&ev=Lead&noscript=1"
+  /></noscript>
+  <!-- Fim Meta Pixel -->
+
+  <style>
+    /* ─── Variables (idênticas à LP) ───────────────────────────── */
+    :root {
+      --blue:         #3b82f6;
+      --blue-dark:    #2563eb;
+      --blue-glow:    rgba(59,130,246,0.15);
+      --blue-border:  rgba(59,130,246,0.28);
+
+      --bg:           #0D0D0D;
+      --bg-card:      #1B1B1B;
+      --bg-deeper:    #111111;
+      --border:       rgba(255,255,255,0.07);
+      --border-card:  #292929;
+
+      --white:        #ECECEC;
+      --white-soft:   #EAEAEA;
+      --white-muted:  #D9D9D9;
+      --gray:         #BFBFBF;
+      --gray-mid:     #969696;
+
+      --font: 'DM Sans', sans-serif;
+      --r:    3px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+      padding-top: 108px;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ─── Botões ────────────────────────────────────────────────── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-family: var(--font);
+      font-weight: 700;
+      border: none;
+      border-radius: var(--r);
+      cursor: pointer;
+      transition: transform .2s ease, box-shadow .2s ease;
+      white-space: nowrap;
+      text-decoration: none;
+    }
+    .btn--primary {
+      background: linear-gradient(90deg, var(--blue-dark) 0%, var(--blue) 100%);
+      color: #fff;
+      font-size: 16px;
+      padding: 16px 36px;
+      box-shadow: 0 0 28px var(--blue-glow);
+    }
+    .btn--primary:hover { transform: scale(1.04); box-shadow: 0 0 40px rgba(59,130,246,.35); }
+    .btn--nav {
+      background: linear-gradient(90deg, var(--blue-dark) 0%, var(--blue) 100%);
+      color: #fff;
+      font-size: 15px;
+      padding: 11px 22px;
+    }
+    .btn--nav:hover { transform: scale(1.05); }
+
+    /* ─── Ticker ────────────────────────────────────────────────── */
+    .ticker-wrap {
+      position: fixed;
+      top: 0; left: 0; width: 100%;
+      height: 37px;
+      background: var(--blue);
+      z-index: 1001;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
+    .ticker-track {
+      display: flex;
+      animation: tick 28s linear infinite;
+      white-space: nowrap;
+    }
+    .ticker-wrap:hover .ticker-track { animation-play-state: paused; }
+    .ticker-item {
+      font-size: 14px;
+      font-weight: 400;
+      color: #000;
+      letter-spacing: -.3px;
+      padding: 0 56px;
+    }
+    .ticker-sep { color: rgba(0,0,0,.4); margin: 0 4px; }
+    @keyframes tick {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    /* ─── Navbar ────────────────────────────────────────────────── */
+    .nav {
+      position: fixed;
+      top: 37px; left: 0; width: 100%;
+      z-index: 1000;
+      background: rgba(13,13,13,.97);
+      backdrop-filter: blur(3px);
+      -webkit-backdrop-filter: blur(3px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 71px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -.5px;
+      color: #fff;
+    }
+    .nav-dot {
+      width: 8px; height: 8px;
+      background: var(--blue);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--blue);
+    }
+    .nav-back {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--gray-mid);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color .2s;
+    }
+    .nav-back:hover { color: var(--white); }
+
+    /* ─── Conteúdo principal ────────────────────────────────────── */
+    .page-section {
+      padding: 80px 0 100px;
+      min-height: calc(100vh - 108px);
+      display: flex;
+      align-items: center;
+    }
+    .page-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 24px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    /* ─── Coluna esquerda ───────────────────────────────────────── */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(59,130,246,.1);
+      border: 1px solid var(--blue-border);
+      border-radius: 100px;
+      padding: 6px 14px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--blue);
+      margin-bottom: 28px;
+    }
+    .badge-dot {
+      width: 7px; height: 7px;
+      background: var(--blue);
+      border-radius: 50%;
+    }
+
+    .heading {
+      font-size: clamp(34px, 3.8vw, 52px);
+      font-weight: 300;
+      line-height: 1.0;
+      letter-spacing: -1.5px;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+    .heading .hl { color: var(--blue); }
+
+    .desc {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.55;
+      letter-spacing: -.5px;
+      color: var(--white-muted);
+      margin-bottom: 36px;
+      max-width: 440px;
+    }
+
+    /* ─── Cards de etapas ───────────────────────────────────────── */
+    .steps { display: flex; flex-direction: column; gap: 10px; }
+
+    .step {
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
+      border-radius: 6px;
+      padding: 20px 24px;
+      display: grid;
+      grid-template-columns: 36px 1fr;
+      gap: 16px;
+      align-items: start;
+      transition: border-color .2s;
+    }
+    .step:hover { border-color: var(--blue-border); }
+
+    .step-num {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      border: 1px solid var(--border-card);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--blue);
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .step-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--white-soft);
+      margin-bottom: 5px;
+      letter-spacing: -.2px;
+    }
+    .step-desc {
+      font-size: 14px;
+      line-height: 1.65;
+      color: var(--gray-mid);
+    }
+
+    /* ─── Footer ────────────────────────────────────────────────── */
+    .footer {
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+      padding: 48px 0 20px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+    .footer-tagline {
+      font-size: 14px;
+      color: var(--gray-mid);
+      line-height: 1.7;
+      max-width: 260px;
+      margin-bottom: 24px;
+    }
+    .footer-socials { display: flex; gap: 10px; }
+    .social-btn {
+      width: 38px; height: 38px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gray-mid);
+      transition: border-color .2s, color .2s, background .2s;
+    }
+    .social-btn:hover { border-color: var(--blue-border); color: var(--blue); background: var(--blue-glow); }
+    .footer-col-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.3);
+      margin-bottom: 18px;
+    }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-links a { font-size: 14px; color: var(--gray-mid); transition: color .2s; }
+    .footer-links a:hover { color: var(--white); }
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 12px;
+      letter-spacing: 1px;
+      color: var(--gray-mid);
+    }
+
+    /* ─── Responsivo ────────────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .page-inner { grid-template-columns: 1fr; gap: 48px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 767px) {
+      body { padding-top: 108px; }
+      .desc { max-width: 100%; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N2NP75J9"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- ─── Ticker ──────────────────────────────────────────────────── -->
+<div class="ticker-wrap" aria-hidden="true">
+  <div class="ticker-track">
+    <span class="ticker-item">Exclusivo para empresas que faturam acima de R$15 mil por mês</span>
+    <span class="ticker-item">•</span>
+    <span class="ticker-item">Exclusivo para empresas que faturam acima de R$15 mil por mês</span>
+    <span class="ticker-item">•</span>
+    <span class="ticker-item">Exclusivo para empresas que faturam acima de R$15 mil por mês</span>
+    <span class="ticker-item">•</span>
+    <span class="ticker-item">Exclusivo para empresas que faturam acima de R$15 mil por mês</span>
+    <span class="ticker-item">•</span>
+    <span class="ticker-item">Exclusivo para empresas que faturam acima de R$15 mil por mês</span>
+    <span class="ticker-item">•</span>
+    <span class="ticker-item">Exclusivo para empresas que faturam acima de R$15 mil por mês</span>
+    <span class="ticker-item">•</span>
+  </div>
+</div>
+
+<!-- ─── Navbar ──────────────────────────────────────────────────── -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <span class="nav-dot"></span>
+      Zuno
+    </a>
+    <a href="https://wa.me/5545998304723?text=Ol%C3%A1%2C+Zuno%21+Quero+saber+mais." target="_blank" class="btn btn--nav">
+      Fale conosco
+    </a>
+  </div>
+</nav>
+
+<!-- ─── Conteúdo ─────────────────────────────────────────────────── -->
+<section class="page-section">
+  <div class="page-inner">
+
+    <!-- Coluna esquerda -->
+    <div>
+      <div class="badge">
+        <span class="badge-dot"></span>
+        Cadastro confirmado
+      </div>
+
+      <h1 class="heading">
+        Seu cadastro foi<br>
+        <span class="hl">recebido com sucesso!</span>
+      </h1>
+
+      <p class="desc">
+        Nos próximos minutos nosso time de especialistas
+        vai entrar em contato para entender melhor o seu
+        negócio e avaliar como podemos contribuir com o
+        crescimento das suas vendas.
+      </p>
+
+      <a
+        id="btn-wa"
+        href="https://wa.me/5545998304723?text=Ol%C3%A1%2C+Zuno%21+Acabei+de+preencher+o+formul%C3%A1rio+no+site."
+        target="_blank"
+        class="btn btn--primary"
+      >
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Fale conosco pelo WhatsApp
+      </a>
+    </div>
+
+    <!-- Coluna direita — próximas etapas -->
+    <div class="steps">
+
+      <div class="step">
+        <div class="step-num">1</div>
+        <div>
+          <div class="step-title">Preenchimento dos dados</div>
+          <div class="step-desc">Após preencher seus dados, um consultor da Zuno vai entrar em contato com você em até 12h. Seja pelo WhatsApp ou ligação.</div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">2</div>
+        <div>
+          <div class="step-title">Conversa com nosso time</div>
+          <div class="step-desc">Nosso time vai fazer algumas perguntas para entender mais a fundo o momento atual do seu negócio e como podemos ajudar.</div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">3</div>
+        <div>
+          <div class="step-title">Reunião de diagnóstico gratuita</div>
+          <div class="step-desc">Em uma call, você vai receber uma análise da sua operação atual. O objetivo é identificar as alavancas certas para escalar suas vendas.</div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">4</div>
+        <div>
+          <div class="step-title">Hora de acelerar suas vendas</div>
+          <div class="step-desc">Com todas as informações em mãos, montamos um plano sob medida com as estratégias certas para o seu negócio crescer de forma consistente.</div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── Footer ───────────────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+
+      <div>
+        <div class="footer-logo">
+          <span class="nav-dot"></span>
+          Zuno Assessoria
+        </div>
+        <p class="footer-tagline">Impulsionamos empresas com estratégias de marketing digital, tráfego pago e estrutura comercial para gerar crescimento real.</p>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/zuno.assessoria" target="_blank" class="social-btn" aria-label="Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://wa.me/5545998304723" target="_blank" class="social-btn" aria-label="WhatsApp">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-col-label">Navegação</div>
+        <ul class="footer-links">
+          <li><a href="/#cases">Cases de sucesso</a></li>
+          <li><a href="/#como-funciona">Como funciona</a></li>
+          <li><a href="/#quem-somos">Quem somos</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-label">Contato</div>
+        <ul class="footer-links">
+          <li><a href="https://www.instagram.com/zuno.assessoria" target="_blank">@zuno.assessoria</a></li>
+          <li><a href="https://wa.me/5545998304723" target="_blank">WhatsApp: (45) 99830-4723</a></li>
+          <li style="color:rgba(255,255,255,.25);font-size:13px;pointer-events:none;">Foz do Iguaçu, PR — Brasil</li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      <span>Copyright © 2025 — ZUNO ASSESSORIA. Todos os direitos reservados.</span>
+      <span>CNPJ: 47.512.920/0001-52</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Lê o parâmetro ?msg= e injeta no href do botão WhatsApp
+  (function () {
+    const params = new URLSearchParams(window.location.search);
+    const msg = params.get('msg');
+    const btn = document.getElementById('btn-wa');
+    if (btn && msg) {
+      btn.href = 'https://wa.me/5545998304723?text=' + encodeURIComponent(msg);
+    }
+  })();
+
+  // Nav solid on scroll
+  window.addEventListener('scroll', () => {
+    document.querySelector('.nav').classList.toggle('nav--solid', window.scrollY > 10);
+  }, { passive: true });
+</script>
+
+</body>
+</html>
