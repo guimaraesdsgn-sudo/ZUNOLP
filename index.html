@@ -1,13 +1,40 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-N2NP75J9');</script>
+  <!-- End Google Tag Manager -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Zuno Assessoria — Marketing e Vendas para Empresas</title>
   <meta name="description" content="Aumentamos o faturamento da sua empresa com o time de Marketing e Vendas da Zuno. Mais de 400 empresas atendidas." />
+  <meta name="facebook-domain-verification" content="gugophuiw0pplzg7x28l9ewzd0j81x" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&display=swap" rel="stylesheet" />
+
+  <!-- Meta Pixel -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window,document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1042829274972057');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1042829274972057&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- Fim Meta Pixel -->
+
   <style>
     /* ─── Variables ─────────────────────────────────────────────── */
     :root {
@@ -207,18 +234,47 @@
 
     /* ─── 3. Hero ───────────────────────────────────────────────── */
     .hero {
+      position: relative;
       background: var(--bg);
-      padding: 60px 0 0;
+      padding: 0;
+      overflow: hidden;
+      min-height: 680px;
+      display: flex;
+      flex-direction: column;
+    }
+    .hero-bg-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 62% center;
+      z-index: 0;
+    }
+    /* Gradiente escuro da esquerda para garantir legibilidade do texto */
+    .hero-bg-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, #0D0D0D 0%, #0D0D0D 20%, rgba(13,13,13,0.55) 36%, rgba(13,13,13,0.05) 52%, transparent 64%),
+        linear-gradient(0deg, #0D0D0D 0%, transparent 22%);
+      z-index: 1;
+      pointer-events: none;
     }
     .hero-inner {
+      position: relative;
+      z-index: 2;
       max-width: 1180px;
       margin: 0 auto;
-      padding: 0 24px 0;
+      width: 100%;
+      padding: 80px 24px 80px;
       display: flex;
-      align-items: flex-start;
-      gap: 64px;
+      align-items: center;
     }
-    .hero-content { flex: 0 0 55%; }
+    .hero-content {
+      flex: 0 0 54%;
+      max-width: 580px;
+    }
     .hero-form-col { flex: 1; padding-top: 8px; }
 
     .hero h1 {
@@ -254,23 +310,41 @@
       width: 34px; height: 34px;
       border-radius: 50%;
       border: 2px solid var(--bg);
-      background: var(--bg-card);
       margin-left: -10px;
       overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--blue);
     }
     .avatar:first-child { margin-left: 0; }
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
     .hero-proof-text {
       font-size: 14px;
       font-weight: 400;
       line-height: 1.35;
       letter-spacing: -.4px;
       color: var(--white-muted);
+    }
+
+    /* ─── Seção formulário ──────────────────────────────────────── */
+    .form-section {
+      background: var(--bg-deeper);
+      padding: 80px 0;
+      border-top: 1px solid var(--border);
+    }
+    .form-section-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
     }
 
     /* Hero form card */
@@ -452,32 +526,14 @@
       margin: 0 auto 64px;
     }
     .metod-diagram {
-      max-width: 860px;
+      max-width: 780px;
       margin: 0 auto 72px;
-      position: relative;
-    }
-    .metod-diagram-center {
-      filter: drop-shadow(0 4px 24px rgba(59,130,246,.18));
     }
     .metod-diagram-center img {
       width: 100%;
       height: auto;
       display: block;
     }
-    .metod-overlay-label {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 3.5px;
-      text-transform: uppercase;
-      color: #5b8fc9;
-      white-space: nowrap;
-      pointer-events: none;
-    }
-    .metod-overlay-label.top    { top: 10%; }
-    .metod-overlay-label.bottom { bottom: 10%; }
     .metod-cards {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -590,23 +646,22 @@
       margin-bottom: 20px;
     }
     .about-cta { margin-top: 32px; }
-    .about-img-wrap {
+    .about-photos {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .about-photos img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
       border-radius: 6px;
-      overflow: hidden;
-      background: var(--bg-card);
-      border: 1px solid var(--border-card);
-      aspect-ratio: 4/3;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: block;
     }
-    .about-img-placeholder {
-      text-align: center;
-      color: var(--gray-mid);
-      font-size: 14px;
-      padding: 32px;
+    .about-photos img:first-child {
+      grid-column: 1 / -1;
+      aspect-ratio: 16/9;
     }
-    .about-img-placeholder svg { margin: 0 auto 12px; opacity: .4; }
 
     /* ─── 8. FAQ ────────────────────────────────────────────────── */
     .faq-section {
@@ -794,13 +849,38 @@
 
     /* ─── Responsive ────────────────────────────────────────────── */
     @media (max-width: 1024px) {
-      .hero-inner { flex-direction: column; gap: 48px; }
-      .hero-content { flex: none; width: 100%; }
-      .hero-form-col { width: 100%; max-width: 540px; }
+      /* Mobile: foto no topo em bloco, texto abaixo — igual Nextage */
+      .hero { min-height: unset; display: block; }
+
+      .hero-bg-img {
+        position: relative;
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        object-position: 62% 12%;
+        display: block;
+      }
+
+      .hero-bg-overlay {
+        top: 0;
+        bottom: auto;
+        height: 400px;
+        background: linear-gradient(0deg, #0D0D0D 0%, rgba(13,13,13,0.15) 52%, transparent 100%);
+      }
+
+      .hero-inner {
+        position: relative;
+        z-index: 2;
+        margin-top: -56px;
+        padding: 0 24px 56px;
+      }
+
+      .hero-content { flex: none; width: 100%; max-width: 100%; }
+      .form-section-inner { grid-template-columns: 1fr; gap: 40px; }
       .metod-cards { grid-template-columns: 1fr; }
       .services-grid { grid-template-columns: repeat(2, 1fr); }
       .about-inner { grid-template-columns: 1fr; gap: 40px; }
-      .about-img-wrap { max-width: 540px; }
+      .about-photos { max-width: 540px; }
       .faq-inner { grid-template-columns: 1fr; gap: 40px; }
       .cta-inner { grid-template-columns: 1fr; gap: 48px; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
@@ -832,6 +912,10 @@
   </style>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N2NP75J9"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <!-- ─── 1. Ticker ──────────────────────────────────────────────── -->
 <div class="ticker-wrap" aria-hidden="true">
@@ -863,7 +947,7 @@
     </ul>
 
     <div class="nav-cta-wrap">
-      <a href="https://wa.me/5545998304723?text=Ol%C3%A1%2C+Zuno%21+Quero+saber+mais." target="_blank" class="btn btn--nav">
+      <a href="#hero-form" class="btn btn--nav">
         Fale conosco
       </a>
     </div>
@@ -876,9 +960,13 @@
 
 <!-- ─── 3. Hero ────────────────────────────────────────────────── -->
 <section class="hero">
+  <!-- Background photo -->
+  <img class="hero-bg-img" src="images/hero.png" alt="Time Zuno Assessoria">
+  <div class="hero-bg-overlay"></div>
+
   <div class="hero-inner">
 
-    <!-- Left: copy -->
+    <!-- Copy -->
     <div class="hero-content">
       <h1>
         Aumentamos o faturamento da sua empresa com o time de
@@ -887,13 +975,15 @@
       <p class="hero-lead">
         Com mais de 400 empresas atendidas, nosso time domina o que funciona para atrair demanda qualificada, alinhar marketing e comercial e escalar o faturamento do seu negócio.
       </p>
+      <a href="#hero-form" class="btn btn--primary" style="margin-bottom:32px;">
+        Quero saber mais informações &rarr;
+      </a>
       <div class="hero-proof">
         <div class="hero-proof-avatars">
-          <div class="avatar">G</div>
-          <div class="avatar">M</div>
-          <div class="avatar">R</div>
-          <div class="avatar">A</div>
-          <div class="avatar">+</div>
+          <div class="avatar"><img src="images/logos/vamos-sorrir.jpg" alt="Vamos Sorrir"></div>
+          <div class="avatar"><img src="images/logos/valencia.jpg" alt="Valencia & Co"></div>
+          <div class="avatar"><img src="images/logos/pionner.jpg" alt="Pionner Shop"></div>
+          <div class="avatar"><img src="images/logos/pradocell.jpg" alt="Pradocell"></div>
         </div>
         <p class="hero-proof-text">
           Centenas de empresas já decolaram,<br>a próxima será a sua?
@@ -901,30 +991,45 @@
       </div>
     </div>
 
-    <!-- Right: form -->
-    <div class="hero-form-col">
-      <div class="hero-form-card">
-        <h2 class="form-title">
-          Dar o próximo passo<br>leva apenas <span class="hl">um minuto!</span>
-        </h2>
+  </div>
 
-        <div class="form-steps">
-          <div class="form-step">
-            <div class="step-num">1</div>
-            <div class="step-body">
-              <strong>Passo 1 — Complete o formulário</strong>
-              Envie suas informações de contato. Todos os seus dados estarão seguros, garantimos total segurança.
-            </div>
-          </div>
-          <div class="form-step">
-            <div class="step-num">2</div>
-            <div class="step-body">
-              <strong>Passo 2 — Receba uma ligação personalizada</strong>
-              Em até 8 horas, um de nossos especialistas fará uma ligação para agendar a reunião mais importante com você.
-            </div>
+  <!-- Bottom bar -->
+  <div class="hero-bar">
+    <div class="hero-bar-inner">
+      <p class="hero-bar-text">
+        Centenas de empresas já decolaram, a próxima será a sua?
+        <strong style="color:var(--blue); margin-left:8px;">Dar o próximo passo leva apenas um minuto!</strong>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Formulário ─────────────────────────────────────────────── -->
+<section class="form-section">
+  <div class="form-section-inner">
+    <div>
+      <h2 class="form-title">
+        Dar o próximo passo<br>leva apenas <span class="hl">um minuto!</span>
+      </h2>
+      <div class="form-steps">
+        <div class="form-step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <strong>Passo 1 — Complete o formulário</strong>
+            Envie suas informações de contato. Todos os seus dados estarão seguros, garantimos total segurança.
           </div>
         </div>
-
+        <div class="form-step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <strong>Passo 2 — Receba uma ligação personalizada</strong>
+            Em até 8 horas, um de nossos especialistas fará uma ligação para agendar a reunião mais importante com você.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="hero-form-card">
         <form id="hero-form" novalidate>
           <div class="form-row">
             <input class="field" type="text" id="h-nome" name="nome" placeholder="Seu nome" required />
@@ -955,17 +1060,6 @@
           </button>
         </form>
       </div>
-    </div>
-
-  </div>
-
-  <!-- Bottom bar -->
-  <div class="hero-bar">
-    <div class="hero-bar-inner">
-      <p class="hero-bar-text">
-        Centenas de empresas já decolaram, a próxima será a sua?
-        <strong style="color:var(--blue); margin-left:8px;">Dar o próximo passo leva apenas um minuto!</strong>
-      </p>
     </div>
   </div>
 </section>
@@ -1039,11 +1133,9 @@
     </div>
 
     <div class="metod-diagram">
-      <div class="metod-overlay-label top">Captação</div>
       <div class="metod-diagram-center">
-        <img src="images/metod-logo.png" alt="Metodologia Zuno">
+        <img src="images/metod-ciclo.png" alt="Metodologia Zuno — Captação, Qualificação, Agendamento e Vendas">
       </div>
-      <div class="metod-overlay-label bottom">Agendamento</div>
     </div>
 
     <div class="metod-cards">
@@ -1153,18 +1245,17 @@
           Com uma equipe dedicada e apaixonada por resultados, nosso time trabalha lado a lado com nossos clientes para criar soluções sob medida, que transformam desafios em oportunidades e ajudam negócios a atrair mais clientes, vender mais e alcançar o próximo nível de crescimento.
         </p>
         <div class="about-cta">
-          <a href="https://wa.me/5545998304723?text=Ol%C3%A1%2C+Zuno%21+Quero+agendar+uma+reuni%C3%A3o." target="_blank" class="btn btn--primary">
+          <a href="#hero-form" class="btn btn--primary">
             Quero saber mais informações
           </a>
         </div>
       </div>
 
-      <div class="about-img-wrap">
-        <div class="about-img-placeholder">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-          <p>Foto do time Zuno</p>
-          <p style="font-size:12px;margin-top:4px;opacity:.5;">Substitua por uma imagem real</p>
-        </div>
+      <div class="about-photos">
+        <img src="images/time/time-04.jpg" alt="Time Zuno trabalhando" loading="lazy">
+        <img src="images/time/time-01.jpg" alt="Equipe Zuno em reunião" loading="lazy">
+        <img src="images/time/time-02.jpg" alt="Produção de criativos Zuno" loading="lazy">
+        <img src="images/time/time-05.jpg" alt="Time Zuno com cliente" loading="lazy">
       </div>
 
     </div>
@@ -1237,7 +1328,7 @@
       <div>
         <h2 class="cta-title">Pronto para aumentar o faturamento da <span class="hl">sua empresa?</span></h2>
         <p class="cta-sub">Agende uma reunião gratuita com nosso time e entenda como a Zuno pode ajudar o seu negócio a gerar mais clientes e aumentar as vendas.</p>
-        <a href="https://wa.me/5545998304723?text=Ol%C3%A1%2C+Zuno%21+Quero+agendar+uma+reuni%C3%A3o+gratuita." target="_blank" class="btn btn--primary">
+        <a href="#hero-form" class="btn btn--primary">
           Quero mais informações
         </a>
       </div>
@@ -1382,7 +1473,7 @@
     document.getElementById('nav').classList.toggle('nav--solid', window.scrollY > 60);
   }, { passive: true });
 
-  // 5. Hero form → WhatsApp
+  // 5. Hero form → qualificação + WhatsApp + redirect
   document.getElementById('hero-form').addEventListener('submit', e => {
     e.preventDefault();
     const nome  = document.getElementById('h-nome').value.trim();
@@ -1391,7 +1482,42 @@
     const ig    = document.getElementById('h-ig').value.trim();
     const fat   = document.getElementById('h-fat').value;
     if (!nome || !wp) { alert('Preencha seu nome e WhatsApp.'); return; }
-    const text = [
+
+    // Desqualificação — faturamento abaixo de R$15 mil
+    if (fat === 'Abaixo de R$15 mil') {
+      const card = document.getElementById('hero-form').closest('.hero-form-card');
+      card.innerHTML = `
+        <div style="text-align:center;padding:32px 16px;">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="1.5" style="margin:0 auto 20px;display:block"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 8v4m0 4h.01"/></svg>
+          <h3 style="font-size:20px;font-weight:700;color:#fff;margin-bottom:12px;letter-spacing:-.3px;">Obrigado pelo interesse!</h3>
+          <p style="font-size:15px;line-height:1.7;color:rgba(255,255,255,.65);max-width:320px;margin:0 auto;">
+            No momento, atendemos empresas com faturamento a partir de R$15 mil/mês.
+            Continue nos acompanhando — em breve podemos ter uma solução para o seu momento.
+          </p>
+        </div>`;
+      return;
+    }
+
+    // Evento de conversão baseado no faturamento
+    if (typeof fbq === 'function') {
+      fbq('trackCustom', 'form_submit');
+      if (fat === 'R$31 mil a R$50 mil') {
+        fbq('trackCustom', 'form_30k+');
+      } else if (['R$51 mil a R$100 mil','R$100 mil a R$200 mil','R$200 mil a R$500 mil','Acima de R$500 mil'].includes(fat)) {
+        fbq('trackCustom', 'form_50k+');
+      }
+    }
+
+    // Envia para Google Sheets (fire and forget)
+    fetch('https://script.google.com/macros/s/AKfycby5WQ1kP_dTTHSuUQZAF3zk9XndAH35Ie-A5x9bl4QmsR-UBwr3c_ONQ0ZqmWPW8BMSLw/exec', {
+      method: 'POST',
+      body: JSON.stringify({ nome, email, whatsapp: wp, instagram: ig, faturamento: fat }),
+      headers: { 'Content-Type': 'text/plain' },
+      keepalive: true
+    }).catch(() => {});
+
+    // Qualificado — redireciona para /obrigado com dados do lead na URL
+    const texto = [
       `Olá, Zuno! 👋`,
       `Me chamo *${nome}*.`,
       email ? `E-mail: ${email}` : '',
@@ -1399,7 +1525,8 @@
       ig    ? `Instagram: ${ig}` : '',
       fat   ? `Faturamento mensal: *${fat}*` : '',
     ].filter(Boolean).join('\n');
-    window.open(`https://wa.me/5545998304723?text=${encodeURIComponent(text)}`, '_blank');
+    const params = new URLSearchParams({ msg: texto });
+    window.location.href = '/obrigado?' + params.toString();
   });
 
   // 6. Show hamburger on mobile
@@ -1410,6 +1537,52 @@
   }
   checkMobile();
   window.addEventListener('resize', checkMobile);
+
+  // ─── Meta Pixel — eventos de engajamento ─────────────────────
+
+  // 7. ViewContent — 5s na página (leu o conteúdo)
+  setTimeout(function () {
+    if (typeof fbq === 'function') fbq('track', 'ViewContent');
+  }, 5000);
+
+  // 8. time_30s — 30s na página (visitante sério)
+  setTimeout(function () {
+    if (typeof fbq === 'function') fbq('trackCustom', 'time_30s');
+  }, 30000);
+
+  // 9. Scroll depth — 25%, 50%, 75%, 90%
+  (function () {
+    const fired = { 25: false, 50: false, 75: false, 90: false };
+    function getScrollPct() {
+      const el = document.documentElement;
+      return Math.round((el.scrollTop || document.body.scrollTop) /
+        ((el.scrollHeight || document.body.scrollHeight) - el.clientHeight) * 100);
+    }
+    window.addEventListener('scroll', function () {
+      if (typeof fbq !== 'function') return;
+      const pct = getScrollPct();
+      [25, 50, 75, 90].forEach(function (p) {
+        if (!fired[p] && pct >= p) {
+          fired[p] = true;
+          fbq('trackCustom', 'scroll_' + p);
+        }
+      });
+    }, { passive: true });
+  })();
+
+  // 10. form_start — clicou no 1º campo do form
+  (function () {
+    var started = false;
+    var firstField = document.getElementById('h-nome');
+    if (firstField) {
+      firstField.addEventListener('focus', function () {
+        if (!started) {
+          started = true;
+          if (typeof fbq === 'function') fbq('trackCustom', 'form_start');
+        }
+      }, { once: true });
+    }
+  })();
 </script>
 
 </body>
